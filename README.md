@@ -76,3 +76,35 @@ This project takes you through the lifecycle of building a modern data platform 
               +------------------+
               | Power BI Reports |
               +------------------+
+
+
+
+---
+
+## 📂 Dataset
+
+This project uses modified AdventureWorks datasets hosted in the GitHub repository under `/Data`. These include:
+
+- `RideWise_Customers.csv`
+- `RideWise_Sales_2015.csv`, `2016`, `2017`
+- `RideWise_Products.csv`
+- `RideWise_Returns.csv`
+- `RideWise_Territories.csv`
+- `RideWise_Calendar.csv`
+- `RideWise_Product_Categories.csv`
+- `RideWise_Product_Subcategories.csv`
+
+---
+
+## 🔄 Data Flow (Medallion Architecture)
+
+| Layer   | Description                               | Tools Used            |
+|---------|-------------------------------------------|------------------------|
+| Bronze  | Raw files from GitHub → ADLS              | ADF Copy Activities    |
+| Silver  | Cleaned, joined, validated data           | PySpark in Databricks |
+| Gold    | Aggregated metrics for analytics          | Databricks SQL        |
+| BI      | Consumed in Synapse & Power BI Dashboards | Synapse + Power BI     |
+
+---
+
+
